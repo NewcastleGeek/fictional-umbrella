@@ -294,12 +294,13 @@ export function generateGallery(scene: THREE.Scene): { colliders: THREE.Box3[], 
 
     // 5. Centerpiece 3D Models on Plinths
     const gltfLoader = new GLTFLoader();
+    const baseUrl = import.meta.env.BASE_URL;
     const models = [
-        { name: 'Robot', url: '/models/RobotExpressive.glb', scale: 0.5 },
-        { name: 'Flamingo', url: '/models/Flamingo.glb', scale: 0.02 },
-        { name: 'Parrot', url: '/models/Parrot.glb', scale: 0.02 },
-        { name: 'Stork', url: '/models/Stork.glb', scale: 0.02 },
-        { name: 'Horse', url: '/models/Horse.glb', scale: 0.015 }
+        { name: 'Robot', url: `${baseUrl}models/RobotExpressive.glb`, scale: 0.5 },
+        { name: 'Flamingo', url: `${baseUrl}models/Flamingo.glb`, scale: 0.02 },
+        { name: 'Parrot', url: `${baseUrl}models/Parrot.glb`, scale: 0.02 },
+        { name: 'Stork', url: `${baseUrl}models/Stork.glb`, scale: 0.02 },
+        { name: 'Horse', url: `${baseUrl}models/Horse.glb`, scale: 0.015 }
     ];
 
     const plinthMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.8, metalness: 0.05 });
